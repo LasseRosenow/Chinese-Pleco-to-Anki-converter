@@ -9,7 +9,7 @@ class Vocabulary(TypedDict):
     translations: list[str]
 
 
-def exportApkgFile(vocabularies: list[Vocabulary], file_path: Path):
+def export_to_apkg_file(vocabularies: list[Vocabulary], file_path: Path):
     # Create model
     model = genanki.Model(
         model_id=1363295007,
