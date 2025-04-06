@@ -1,10 +1,8 @@
-import dictionary
-from src import export
+from src import anki_export
 
-entries = dictionary.entries("./cedict.txt")
-
-for entry in entries:
-    if entry.simp == "打":
-        print("line:", entry.line)
-        print("defs:", entry.defs)
-        break
+anki_export.exportApkgFile(
+    vocabularies=[
+        {"hanzi": "做", "pinyin": "zuò", "translations": ["work", "make", "act"]}
+    ],
+    file="./asdf.apkg",
+)
