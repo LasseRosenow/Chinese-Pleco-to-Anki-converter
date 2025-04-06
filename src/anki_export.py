@@ -1,5 +1,6 @@
 import genanki
 from typing import TypedDict
+from pathlib import Path
 
 
 class Vocabulary(TypedDict):
@@ -8,7 +9,7 @@ class Vocabulary(TypedDict):
     translations: list[str]
 
 
-def exportApkgFile(vocabularies: list[Vocabulary], file: str):
+def exportApkgFile(vocabularies: list[Vocabulary], file_path: Path):
     # Create model
     model = genanki.Model(
         model_id=1363295007,
@@ -42,4 +43,4 @@ def exportApkgFile(vocabularies: list[Vocabulary], file: str):
         )
 
     # Write deck package to disk
-    genanki.Package(deck).write_to_file(file)
+    genanki.Package(deck).write_to_file(file_path)
